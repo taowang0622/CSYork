@@ -36,3 +36,7 @@ Database: mongoDB
 
 ##Screenshot
 ![gallery](https://www.dropbox.com/s/h6ungt0o7oe6yvy/hackfest.png?raw=1)
+
+##TODO
+Optimize the concurrency
+Deploy it onto the cloud using docker
