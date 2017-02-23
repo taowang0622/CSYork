@@ -1,0 +1,44 @@
+<div style="padding:50px"></div>
+<div class="container">
+  <div class="col-xs-6">
+    <uib-accordion close-others="oneAtATime">
+      <div uib-accordion-group ng-repeat="thread in threads" class="panel-default"
+           is-open="thread.isOpen" ng-click="updateOpenStatus()">
+        <uib-accordion-heading>
+          <a ng-click="triggerComments(thread._id)" style="color: black">{{thread.header}}</a>
+        </uib-accordion-heading>
+        <p>{{thread.contents}}</p>
+        <button class="btn btn-info btn-xs" ng-click="selectedThread(thread._id)">Show comments</button>
+      </div>
+    </uib-accordion>
+  </div>
+  <div class="col-xs-6">
+    <div ng-if="noComments">
+      <div>
+        <button class="btn btn-primary" ng-click="postComment()">Comment</button>
+      </div>
+      <hr>
+      <h4>No comments</h4>
+    </div>
+    <div ng-if="showComments">
+      <div>
+        <button class="btn btn-primary" ng-click="postComment()">Comment</button>
+      </div>
+      <hr>
+      <ul class="media-list">
+        <li class="media" ng-repeat="comment in comments">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" style="width:50px;height: 50px"
+                   src="https://www.dropbox.com/s/98indfozfr2x9dq/images.png?raw=1">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{comment.postedBy.userName}}</h4>
+            <p>{{comment.comment}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
