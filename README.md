@@ -39,4 +39,5 @@ Database: mongoDB
 
 ##TODO
 Optimize the concurrency
-Deploy it onto the cloud using docker
+
+Deploy it onto the cloud using Docker
