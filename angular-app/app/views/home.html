@@ -18,7 +18,7 @@
         <button class="btn btn-primary" ng-click="askQuestion()">Ask Question</button>
       </div>
       <hr>
-      <h4>No threads</h4>
+      <h4>No Questions</h4>
     </div>
     <div ng-if="showThreads">
       <div>
@@ -29,11 +29,10 @@
         <div uib-accordion-group ng-repeat="thread in threads" class="panel-default"
              is-open="thread.isOpen" ng-click="updateOpenStatus()">
           <uib-accordion-heading>
-            {{thread.header}}
+            <a ng-click="selectedThread(thread._id)" style="color: black">{{thread.header}}</a>
           </uib-accordion-heading>
           <p>{{thread.contents}}</p>
-          <button class="btn btn-info btn-xs" ng-click="selectedThread(thread._id)">Show comments</button>
-          <a class="btn btn-xs pull-right" type="button" ng-click="addToFavorites(thread._id)">
+          <a class="btn btn-xs pull-left" type="button" ng-click="addToFavorites(thread._id)">
             <i class="fa fa-heart gold"></i>
           </a>
         </div>
